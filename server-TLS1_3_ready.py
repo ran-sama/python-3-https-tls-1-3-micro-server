@@ -17,7 +17,8 @@ sslcontext.options |= ssl.OP_NO_TLSv1_1
 #sslcontext.protocol = ssl.PROTOCOL_TLS
 #sslcontext.verify_mode = ssl.CERT_REQUIRED
 sslcontext.set_ciphers("ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305")
-sslcontext.set_ecdh_curve("secp521r1")#works well on firefox but you can also use secp384r1
+sslcontext.set_ecdh_curve("secp384r1")#works well with everything
+#sslcontext.set_ecdh_curve("secp521r1")#works well on firefox and wget but not aria2
 #sslcontext.load_verify_locations(MYSERV_CLIENTCRT)
 sslcontext.load_cert_chain(MYSERV_FULLCHAIN, MYSERV_PRIVKEY)
 
